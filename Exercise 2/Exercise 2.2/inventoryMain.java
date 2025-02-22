@@ -22,7 +22,9 @@ public class inventoryMain {
         System.out.println("count: " + inventory.getItemCount());
 
         System.out.println();
-
+        inventory.removeItem(itemlist.get(3));
+        System.out.println();
+        
         System.out.println(inventory.hasItem(itemlist.get(0)));
         System.out.println(inventory.hasItem(itemlist.get(3)));
 
