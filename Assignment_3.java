@@ -120,7 +120,7 @@ class DoublyLinkedList{
     }
 }
 
-public class Main {
+public class Assignment_3 {
     public static void main(String[] args) {
         // Testing Singly Linked List
         SinglyLinkedList singly = new SinglyLinkedList();
