@@ -29,10 +29,10 @@ class SinglyLinkedList{
         Node prev = head;
         while(cur!=null){
             if(cur.data.equals(string)){
-                if (cur == tail) {
+                if (cur == tail) { // if deleted is the last
                     tail = prev;
                 }
-                if(head.next==null){
+                if(head.next==null){ // if deleted is the first
                     tail=head;
                 }
                 prev.next=cur.next;
@@ -86,24 +86,24 @@ class DoublyLinkedList{
         Node cur = head.next;
         while(cur!=null){
             if(cur.data.equals(string)){
-                if(cur==head.next){
+                if(cur==head.next){ // if deleted is first
                     head.next=cur.next;
                     if (head.next != null) {
                         head.next.prev = null;
                     }
                 }
-                else if (cur == tail) {
+                else if (cur == tail) { // if deleted is the last
                     tail = cur.prev;
                     tail.next=null;
                 }
-                else {
+                else { // if in middle
                     cur.prev.next = cur.next;
                     if (cur.next != null) {
                         cur.next.prev = cur.prev;
                     }
                 }
                 if (head.next == null) {
-                    tail = head;
+                    tail = head; // resets
                 }
                 return;
             }
@@ -122,13 +122,10 @@ class DoublyLinkedList{
 
 public class Assignment_3 {
     public static void main(String[] args) {
-        // Testing Singly Linked List
         SinglyLinkedList singly = new SinglyLinkedList();
 
-        // Test removing from empty list
-        singly.remove("A");  // Edge Case: Removing from an empty list
+        singly.remove("A");
 
-        // Adding elements
         singly.add("A");
         singly.add("B");
         singly.add("C");
